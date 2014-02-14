@@ -1,0 +1,52 @@
+{
+  "name": "urls-md",
+  "version": "0.0.0",
+  "description": "Convert URLs to Markdown links: Extracts URLs from text → Gets their article title → Creates Markdown links",
+  "license": "MIT",
+  "repository": "sindresorhus/urls-md",
+  "bin": {
+    "urls-md": "cli.js"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli",
+    "bin",
+    "link",
+    "links",
+    "dump",
+    "text",
+    "string",
+    "url",
+    "urls",
+    "convert",
+    "extract",
+    "get",
+    "markdown",
+    "md",
+    "article",
+    "title"
+  ],
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "dependencies": {
+    "each-async": "~0.1.2",
+    "article-title": "~0.1.0",
+    "get-urls": "~0.1.0",
+    "request": "~2.33.0"
+  }
+}
