@@ -43,6 +43,13 @@ or
 cat <input-file> | urls-md
 ```
 
+You can also easily run through multiple files using shell scripting. In this example using ZSH syntax:
+
+```zsh
+# loops through all .txt files in the current directory and outputs the converted files with .md extension
+for f (*.txt) { urls-md $f > $f.md }
+```
+
 
 ## API
 
