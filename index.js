@@ -13,10 +13,9 @@ module.exports = function (str, cb) {
 				return next(err || res.statusCode);
 			}
 
-			if (res.headers['content-type'].match(/(image\/[a-zA-Z]*)/i) != null) {
+			if (/(^image\/)/i.test(res.headers['content-type'])) {
 				ret[i] = '![](' + url + ')';
-				next();
-				return;
+				return next();
 			}
 
 			var title = articleTitle(body);
