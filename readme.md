@@ -1,10 +1,10 @@
 # urls-md [![Build Status](https://travis-ci.org/sindresorhus/urls-md.png?branch=master)](https://travis-ci.org/sindresorhus/urls-md)
 
-> Convert URLs to Markdown links  
+> Convert URLs to Markdown links and images
 
-[Extracts URLs from text](https://github.com/sindresorhus/get-urls) → [Gets their article title](https://github.com/sindresorhus/article-title) → Creates Markdown links
+[Extracts URLs from text](https://github.com/sindresorhus/get-urls) → [Gets their article title](https://github.com/sindresorhus/article-title) → Creates Markdown links and images
 
-Useful for when you have a linkdump and want them as Markdown links.
+Useful for when you have a linkdump and want them in Markdown.
 
 
 ###### From
@@ -14,6 +14,7 @@ Lorem ipsum dolor sit amet
 http://updates.html5rocks.com/2014/01/Yo-Polymer-A-Whirlwind-Tour-Of-Web-Component-Tooling
 Magnis dis parturient montes.
 Lorem http://codelittle.com/tag/yeoman/
+https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png
 ```
 
 ###### To
@@ -22,6 +23,8 @@ Lorem http://codelittle.com/tag/yeoman/
 [Yo Polymer – A Whirlwind Tour Of Web Component Tooling](http://updates.html5rocks.com/2014/01/Yo-Polymer-A-Whirlwind-Tour-Of-Web-Component-Tooling)
 
 [How To Use Yeoman](http://codelittle.com/tag/yeoman/)
+
+![](https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png)
 ```
 
 
