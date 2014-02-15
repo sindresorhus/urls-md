@@ -13,6 +13,12 @@ module.exports = function (str, cb) {
 				return next(err || res.statusCode);
 			}
 
+			if (res.headers['content-type'].match(/(image\/[a-zA-Z]*)/i) != null) {
+				ret[i] = '![](' + url + ')';
+				next();
+				return;
+			}
+
 			var title = articleTitle(body);
 
 			if (!title) {
