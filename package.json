@@ -1,7 +1,7 @@
 {
   "name": "urls-md",
   "version": "0.2.0",
-  "description": "Convert URLs to Markdown links: Extracts URLs from text → Gets their article title → Creates Markdown links",
+  "description": "Convert URLs to Markdown links and images: Extracts URLs from text → Gets their article title → Creates Markdown links",
   "license": "MIT",
   "repository": "sindresorhus/urls-md",
   "bin": {
@@ -38,7 +38,10 @@
     "markdown",
     "md",
     "article",
-    "title"
+    "title",
+    "img",
+    "image",
+    "images"
   ],
   "devDependencies": {
     "mocha": "*"
