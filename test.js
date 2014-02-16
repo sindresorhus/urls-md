@@ -4,7 +4,7 @@ var fs = require('fs');
 var urlsMd = require('./index');
 
 it('should extract links, get title, and convert to markdown links', function (cb) {
-	this.timeout(20000);
+	this.timeout(10000);
 
 	urlsMd(fs.readFileSync('fixture.txt', 'utf8'), function (err, data) {
 		if (err) {

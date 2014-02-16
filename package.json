@@ -50,6 +50,7 @@
     "each-async": "~0.1.2",
     "article-title": "~0.1.0",
     "get-urls": "~0.1.0",
-    "request": "~2.33.0"
+    "request": "~2.33.0",
+    "chalk": "~0.4.0"
   }
 }
