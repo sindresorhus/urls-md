@@ -1,4 +1,4 @@
-# urls-md [![Build Status](https://travis-ci.org/sindresorhus/urls-md.png?branch=master)](https://travis-ci.org/sindresorhus/urls-md)
+# urls-md [![Build Status](https://travis-ci.org/sindresorhus/urls-md.svg?branch=master)](https://travis-ci.org/sindresorhus/urls-md)
 
 > Convert URLs to Markdown links and images
 
@@ -32,13 +32,13 @@ https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png
 
 #### Install
 
-```
-npm install --global urls-md
+```bash
+$ npm install --global urls-md
 ```
 
 #### Usage
 
-```
+```bash
 $ urls-md --help
 
 urls-md <input-file>
@@ -58,8 +58,8 @@ for f (*.txt) { urls-md $f > $f.md }
 
 #### Install
 
-```
-npm install --save urls-md
+```bash
+$ npm install --save urls-md
 ```
 
 #### Usage
@@ -74,4 +74,4 @@ urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/', function (err, data) {
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
