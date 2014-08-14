@@ -30,25 +30,21 @@ https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png
 
 ## CLI
 
-#### Install
-
-```bash
+```sh
 $ npm install --global urls-md
 ```
 
-#### Usage
-
-```bash
+```sh
 $ urls-md --help
 
-urls-md <input-file>
-or
-cat <input-file> | urls-md
+  Usage
+    urls-md <file>
+    cat <file> | urls-md
 ```
 
 You can also easily run through multiple files using shell scripting. In this example using ZSH syntax:
 
-```zsh
+```sh
 # loops through all .txt files in the current directory and outputs the converted files with .md extension
 for f (*.txt) { urls-md $f > $f.md }
 ```
@@ -56,13 +52,9 @@ for f (*.txt) { urls-md $f > $f.md }
 
 ## API
 
-#### Install
-
-```bash
+```sh
 $ npm install --save urls-md
 ```
-
-#### Usage
 
 ```js
 urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/', function (err, data) {
@@ -74,4 +66,4 @@ urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/', function (err, data) {
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

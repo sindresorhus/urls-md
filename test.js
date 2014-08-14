@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
 var fs = require('fs');
-var urlsMd = require('./index');
+var urlsMd = require('./');
 
 it('should extract links, get title, and convert to markdown links', function (cb) {
 	this.timeout(10000);

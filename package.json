@@ -4,13 +4,13 @@
   "description": "Convert URLs to Markdown links and images: Extracts URLs from text → Gets their article title → Creates Markdown links",
   "license": "MIT",
   "repository": "sindresorhus/urls-md",
-  "bin": {
-    "urls-md": "cli.js"
-  },
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "http://sindresorhus.com"
+  },
+  "bin": {
+    "urls-md": "cli.js"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -47,10 +47,11 @@
     "mocha": "*"
   },
   "dependencies": {
-    "each-async": "~0.1.2",
-    "article-title": "~0.1.0",
-    "get-urls": "~0.1.0",
-    "request": "~2.33.0",
-    "chalk": "~0.4.0"
+    "article-title": "^1.0.0",
+    "chalk": "^0.5.1",
+    "each-async": "^1.0.0",
+    "get-stdin": "^1.0.0",
+    "get-urls": "^1.0.0",
+    "request": "^2.40.0"
   }
 }
