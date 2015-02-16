@@ -48,10 +48,10 @@
   },
   "dependencies": {
     "article-title": "^1.0.0",
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "each-async": "^1.0.0",
-    "get-stdin": "^3.0.0",
-    "get-urls": "^3.0.0",
+    "get-stdin": "^4.0.1",
+    "get-urls": "^4.0.1",
     "request": "^2.40.0"
   }
 }
