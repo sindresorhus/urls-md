@@ -30,11 +30,11 @@ https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png
 
 ## CLI
 
-```sh
+```
 $ npm install --global urls-md
 ```
 
-```sh
+```
 $ urls-md --help
 
   Usage
@@ -44,7 +44,7 @@ $ urls-md --help
 
 You can also easily run through multiple files using shell scripting. In this example using ZSH syntax:
 
-```sh
+```
 # loops through all .txt files in the current directory and outputs the converted files with .md extension
 for f (*.txt) { urls-md $f > $f.md }
 ```
@@ -52,7 +52,7 @@ for f (*.txt) { urls-md $f > $f.md }
 
 ## API
 
-```sh
+```
 $ npm install --save urls-md
 ```
 
