@@ -10,7 +10,7 @@ var cli = meow({
 		'Usage',
 		'  $ urls-md <file>',
 		'  $ cat <file> | urls-md'
-	].join('\n')
+	]
 });
 
 function init(str) {
