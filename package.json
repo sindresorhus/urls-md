@@ -1,6 +1,6 @@
 {
   "name": "urls-md",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Convert URLs to Markdown links and images: Extracts URLs from text → Gets their article title → Creates Markdown links",
   "license": "MIT",
   "repository": "sindresorhus/urls-md",
