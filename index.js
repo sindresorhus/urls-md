@@ -4,8 +4,9 @@ var articleTitle = require('article-title');
 var eachAsync = require('each-async');
 var got = require('got');
 var chalk = require('chalk');
+var pify = require('pify');
 
-module.exports = function (str, cb) {
+function urlsMd(str, cb) {
 	var ret = [];
 	var urls = getUrls(str);
 
@@ -50,4 +51,6 @@ module.exports = function (str, cb) {
 
 		cb(null, ret);
 	});
-};
+}
+
+module.exports = pify(urlsMd);

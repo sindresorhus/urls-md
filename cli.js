@@ -5,21 +5,14 @@ var getStdin = require('get-stdin');
 var meow = require('meow');
 var urlsMd = require('./');
 
-var cli = meow({
-	help: [
-		'Usage',
-		'  $ urls-md <file>',
-		'  $ cat <file> | urls-md'
-	]
-});
+var cli = meow([
+	'Usage',
+	'  $ urls-md <file>',
+	'  $ cat <file> | urls-md'
+]);
 
 function init(str) {
-	urlsMd(str, function (err, data) {
-		if (err) {
-			console.error(err.message);
-			process.exit(1);
-		}
-
+	urlsMd(str).then(function (data) {
 		console.log(data.join('\n\n'));
 	});
 }
@@ -32,5 +25,5 @@ if (process.stdin.isTTY) {
 
 	init(fs.readFileSync(cli.input[0], 'utf8'));
 } else {
-	getStdin(init);
+	getStdin().then(init);
 }

@@ -57,9 +57,9 @@ $ npm install --save urls-md
 ```
 
 ```js
-urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/', function (err, data) {
-    console.log(data);
-    //=>  ['[How To Use Yeoman](http://codelittle.com/tag/yeoman/)']
+urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/').then(function (data) {
+	console.log(data);
+	//=>  ['[How To Use Yeoman](http://codelittle.com/tag/yeoman/)']
 });
 ```
 
