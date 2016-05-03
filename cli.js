@@ -1,21 +1,17 @@
 #!/usr/bin/env node
 'use strict';
-var fs = require('fs');
-var getStdin = require('get-stdin');
-var meow = require('meow');
-var urlsMd = require('./');
+const fs = require('fs');
+const getStdin = require('get-stdin');
+const meow = require('meow');
+const urlsMd = require('./');
 
-var cli = meow([
-	'Usage',
-	'  $ urls-md <file>',
-	'  $ cat <file> | urls-md'
-]);
+const cli = meow(`
+	Usage
+	  $ urls-md <file>
+	  $ cat <file> | urls-md
+`);
 
-function init(str) {
-	urlsMd(str).then(function (data) {
-		console.log(data.join('\n\n'));
-	});
-}
+const init = str => urlsMd(str).then(x => console.log(x.join('\n\n')));
 
 if (process.stdin.isTTY) {
 	if (!cli.input[0]) {

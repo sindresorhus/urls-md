@@ -28,6 +28,36 @@ https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png
 ```
 
 
+## Install
+
+```
+$ npm install --save urls-md
+```
+
+
+## Usage
+
+```js
+const urslMd = require('urls-md');
+
+urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/').then(urls => {
+	console.log(urls);
+	//=>  ['[How To Use Yeoman](http://codelittle.com/tag/yeoman/)']
+});
+```
+
+
+## API
+
+### urlsMd(input)
+
+#### input
+
+Type: `string`
+
+Text to extract markdown links and images from.
+
+
 ## CLI
 
 ```
@@ -50,20 +80,6 @@ for f (*.txt) { urls-md $f > $f.md }
 ```
 
 
-## API
-
-```
-$ npm install --save urls-md
-```
-
-```js
-urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/').then(function (data) {
-	console.log(data);
-	//=>  ['[How To Use Yeoman](http://codelittle.com/tag/yeoman/)']
-});
-```
-
-
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

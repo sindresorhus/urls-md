@@ -11,10 +11,10 @@
   },
   "bin": "cli.js",
   "engines": {
-    "node": ">=0.12"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "xo && mocha"
+    "test": "xo && ava"
   },
   "files": [
     "index.js",
@@ -44,16 +44,16 @@
   ],
   "dependencies": {
     "article-title": "^1.0.0",
-    "chalk": "^1.0.0",
-    "each-async": "^1.0.0",
     "get-stdin": "^5.0.1",
     "get-urls": "^5.0.0",
-    "got": "^5.1.0",
-    "meow": "^3.3.0",
-    "pify": "^2.3.0"
+    "got": "^6.3.0",
+    "meow": "^3.3.0"
   },
   "devDependencies": {
-    "mocha": "*",
+    "ava": "*",
     "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
