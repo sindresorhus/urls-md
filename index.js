@@ -1,56 +1,30 @@
 'use strict';
-var getUrls = require('get-urls');
-var articleTitle = require('article-title');
-var eachAsync = require('each-async');
-var got = require('got');
-var chalk = require('chalk');
-var pify = require('pify');
+const getUrls = require('get-urls');
+const articleTitle = require('article-title');
+const got = require('got');
 
-function urlsMd(str, cb) {
-	var ret = [];
-	var urls = getUrls(str);
+module.exports = str => {
+	const urls = getUrls(str);
 
 	if (urls.length === 0) {
-		console.error('No URLs found');
-		return;
+		return Promise.reject(new Error('No URLs found'));
 	}
 
-	eachAsync(getUrls(str), function (url, i, next) {
-		got(url, function (err, data, res) {
-			if (err && err.code === 'ENOTFOUND') {
-				console.error('Couldn\'t resolve ' + chalk.blue(url));
-				return;
-			}
-
-			if (err) {
-				next(err);
-				return;
-			}
-
+	return Promise.all(urls.map(url => got(url)
+		.then(res => {
 			if (/(^image\/)/i.test(res.headers['content-type'])) {
-				ret[i] = '![](' + url + ')';
-				next();
-				return;
+				return `![](${url})`;
 			}
 
-			var title = articleTitle(data);
-
-			if (!title) {
-				next('Couldn\'t get title for ' + url);
-				return;
+			const title = articleTitle(res.body) || url;
+			return `[${title}](${url})`;
+		})
+		.catch(err => {
+			if (err.code === 'ENOTFOUND') {
+				throw new Error(`Couldn't resolve ${url}`);
 			}
 
-			ret[i] = '[' + title + '](' + url + ')';
-			next();
-		});
-	}, function (err) {
-		if (err) {
-			cb(err);
-			return;
-		}
-
-		cb(null, ret);
-	});
-}
-
-module.exports = pify(urlsMd);
+			throw err;
+		}))
+	);
+};
