@@ -1,4 +1,4 @@
-# urls-md [![Build Status](https://travis-ci.org/sindresorhus/urls-md.svg?branch=master)](https://travis-ci.org/sindresorhus/urls-md)
+# urls-md
 
 > Convert URLs to Markdown links and images
 
