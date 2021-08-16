@@ -6,7 +6,6 @@
 
 Useful for when you have a linkdump and want them in Markdown.
 
-
 ###### From
 
 ```
@@ -27,25 +26,22 @@ https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png
 ![](https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png)
 ```
 
-
 ## Install
 
 ```
-$ npm install --save urls-md
+$ npm install urls-md
 ```
-
 
 ## Usage
 
 ```js
-const urslMd = require('urls-md');
+import urslMd from 'urls-md';
 
-urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/').then(urls => {
-	console.log(urls);
-	//=>  ['[How To Use Yeoman](http://codelittle.com/tag/yeoman/)']
-});
+const urls = await urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/');
+
+console.log(urls);
+//=>  ['[How To Use Yeoman](http://codelittle.com/tag/yeoman/)']
 ```
-
 
 ## API
 
@@ -55,8 +51,7 @@ urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/').then(urls => {
 
 Type: `string`
 
-Text to extract markdown links and images from.
-
+Text to extract Markdown links and images from.
 
 ## CLI
 
@@ -78,8 +73,3 @@ You can also easily run through multiple files using shell scripting. In this ex
 # loops through all .txt files in the current directory and outputs the converted files with .md extension
 for f (*.txt) { urls-md $f > $f.md }
 ```
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

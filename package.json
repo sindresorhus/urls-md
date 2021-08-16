@@ -1,59 +1,57 @@
 {
-  "name": "urls-md",
-  "version": "3.0.0",
-  "description": "Convert URLs to Markdown links and images: Extracts URLs from text → Gets their article title → Creates Markdown links",
-  "license": "MIT",
-  "repository": "sindresorhus/urls-md",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "bin": "cli.js",
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js",
-    "cli.js"
-  ],
-  "keywords": [
-    "cli-app",
-    "cli",
-    "bin",
-    "link",
-    "links",
-    "dump",
-    "text",
-    "string",
-    "url",
-    "urls",
-    "convert",
-    "extract",
-    "get",
-    "markdown",
-    "md",
-    "article",
-    "title",
-    "img",
-    "image",
-    "images"
-  ],
-  "dependencies": {
-    "article-title": "^1.0.0",
-    "get-stdin": "^5.0.1",
-    "get-urls": "^5.0.0",
-    "got": "^6.3.0",
-    "meow": "^3.3.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "urls-md",
+	"version": "3.0.0",
+	"description": "Convert URLs to Markdown links and images: Extracts URLs from text → Gets their article title → Creates Markdown links",
+	"license": "MIT",
+	"repository": "sindresorhus/urls-md",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"bin": "cli.js",
+	"engines": {
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"cli.js"
+	],
+	"keywords": [
+		"cli-app",
+		"cli",
+		"bin",
+		"link",
+		"links",
+		"dump",
+		"text",
+		"string",
+		"url",
+		"urls",
+		"convert",
+		"extract",
+		"get",
+		"markdown",
+		"md",
+		"article",
+		"title",
+		"image",
+		"images"
+	],
+	"dependencies": {
+		"article-title": "^1.0.0",
+		"get-stdin": "^5.0.1",
+		"get-urls": "^5.0.0",
+		"got": "^6.3.0",
+		"meow": "^3.3.0"
+	},
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"xo": "^0.44.0"
+	}
 }

@@ -1,30 +1,33 @@
-'use strict';
-const getUrls = require('get-urls');
-const articleTitle = require('article-title');
-const got = require('got');
+import getUrls from 'get-urls';
+import articleTitle from 'article-title';
+import got from 'got';
 
-module.exports = str => {
-	const urls = getUrls(str);
+export default async function urlsMd(string) {
+	const urls = getUrls(string);
 
 	if (urls.length === 0) {
-		return Promise.reject(new Error('No URLs found'));
+		throw new Error('No URLs found');
 	}
 
-	return Promise.all(urls.map(url => got(url)
-		.then(res => {
-			if (/(^image\/)/i.test(res.headers['content-type'])) {
+	return Promise.all(
+		urls.map(async url => {
+			let response;
+			try {
+				response = await got(url);
+			} catch (error) {
+				if (error.code === 'ENOTFOUND') {
+					throw new Error(`Could not resolve ${url}`);
+				}
+
+				throw error;
+			}
+
+			if (response.headers['content-type'].toLowerCase().startsWith('image/')) {
 				return `![](${url})`;
 			}
 
-			const title = articleTitle(res.body) || url;
+			const title = articleTitle(response.body) || url;
 			return `[${title}](${url})`;
-		})
-		.catch(err => {
-			if (err.code === 'ENOTFOUND') {
-				throw new Error(`Couldn't resolve ${url}`);
-			}
-
-			throw err;
-		}))
+		}),
 	);
-};
+}
