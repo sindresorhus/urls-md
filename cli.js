@@ -24,10 +24,8 @@ if (process.stdin.isTTY) {
 		process.exit(1);
 	}
 
-	init(fs.readFileSync(cli.input[0], 'utf8'));
+	await init(fs.readFileSync(cli.input[0], 'utf8'));
 } else {
-	(async () => {
-		const stdin = await getStdin();
-		await init(stdin);
-	})();
+	const stdin = await getStdin();
+	await init(stdin);
 }

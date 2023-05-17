@@ -14,7 +14,7 @@
 	"exports": "./index.js",
 	"bin": "cli.js",
 	"engines": {
-		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+		"node": ">=16"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -45,14 +45,14 @@
 		"images"
 	],
 	"dependencies": {
-		"article-title": "^1.0.0",
-		"get-stdin": "^5.0.1",
-		"get-urls": "^5.0.0",
-		"got": "^6.3.0",
-		"meow": "^3.3.0"
+		"article-title": "^4.1.0",
+		"get-stdin": "^9.0.0",
+		"get-urls": "^11.0.0",
+		"got": "^12.6.0",
+		"meow": "^12.0.1"
 	},
 	"devDependencies": {
-		"ava": "^3.15.0",
-		"xo": "^0.44.0"
+		"ava": "^5.2.0",
+		"xo": "^0.54.2"
 	}
 }

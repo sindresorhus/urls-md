@@ -10,7 +10,7 @@ export default async function urlsMd(string) {
 	}
 
 	return Promise.all(
-		urls.map(async url => {
+		[...urls].map(async url => {
 			let response;
 			try {
 				response = await got(url);
@@ -26,7 +26,7 @@ export default async function urlsMd(string) {
 				return `![](${url})`;
 			}
 
-			const title = articleTitle(response.body) || url;
+			const title = articleTitle(response.body) ?? url;
 			return `[${title}](${url})`;
 		}),
 	);
