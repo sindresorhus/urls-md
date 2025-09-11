@@ -35,7 +35,7 @@ npm install urls-md
 ## Usage
 
 ```js
-import urslMd from 'urls-md';
+import urlsMd from 'urls-md';
 
 const urls = await urlsMd('Lorem ipsum http://codelittle.com/tag/yeoman/');
 
@@ -45,13 +45,15 @@ console.log(urls);
 
 ## API
 
-### urlsMd(input)
+### urlsMd(text)
 
-#### input
+#### text
 
 Type: `string`
 
-Text to extract Markdown links and images from.
+Text containing URLs to convert to Markdown links and images.
+
+Returns a `Promise<string[]>` with an array of Markdown formatted links and images.
 
 ## CLI
 

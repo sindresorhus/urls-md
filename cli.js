@@ -13,19 +13,18 @@ const cli = meow(`
 	importMeta: import.meta,
 });
 
-const init = async string => {
-	const urls = await urlsMd(string);
+const run = async text => {
+	const urls = await urlsMd(text);
 	console.log(urls.join('\n\n'));
 };
 
-if (process.stdin.isTTY) {
-	if (!cli.input[0]) {
-		console.error('Input file required');
-		process.exit(1);
-	}
+const text = process.stdin.isTTY
+	? (cli.input[0]
+		? fs.readFileSync(cli.input[0], 'utf8')
+		: (() => {
+			console.error('Input file required');
+			process.exit(1);
+		})())
+	: await getStdin();
 
-	await init(fs.readFileSync(cli.input[0], 'utf8'));
-} else {
-	const stdin = await getStdin();
-	await init(stdin);
-}
+await run(text);
